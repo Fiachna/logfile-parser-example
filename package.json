@@ -1,6 +1,6 @@
 {
   "name": "digio-code-test",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Fiachna Carter code test for digio",
   "main": "index.ts",
   "scripts": {
@@ -24,5 +24,8 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "commander": "^9.3.0"
   }
 }
