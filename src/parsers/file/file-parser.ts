@@ -24,7 +24,12 @@ export const fileParser = async (filename: string) => {
 
     await events.once(lineReader, 'close')
 
-    console.log(transduceSet(urls).sort(parsedEntrySorter), transduceSet(ipAddresses).sort(parsedEntrySorter))
+    const urlSet = transduceSet(urls).sort(parsedEntrySorter)
+    const ipAddressSet = transduceSet(ipAddresses).sort(parsedEntrySorter)
+
+    console.info('Top 3 URLs by visits:\n', urlSet.slice(0,3).map((url) => url.value).join('\n'))
+    console.info('Top 3 IP Addresses by activity:\n', ipAddressSet.slice(0,3).map((url) => url.value).join('\n'))
+    console.info('Total IP Address count:', ipAddressSet.length)
 
   } catch (error) {
     console.error(error)
