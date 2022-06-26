@@ -4,10 +4,8 @@ describe('#ipAddressHandler', () => {
   describe('when the input matches an IP address pattern', () => {
     const input = 'this is some matching input 192.168.1.1'
 
-    describe('when there is no existing parsed-data', () => {
-      it('populates the IP address section of the parsed data with the found IP address', () => {
-        expect(ipAddressParser(input)).toEqual('192.168.1.1')
-      })
+    it('returns the parsed IP address', () => {
+      expect(ipAddressParser(input)).toEqual('192.168.1.1')
     })
   })
 
