@@ -1,4 +1,4 @@
-import { urlParser } from "./url-parser"
+import { parseUrl } from "./url-parser"
 
 describe('#urlHandler', () => {
   describe('when the input matches a url pattern', () => {
@@ -6,7 +6,7 @@ describe('#urlHandler', () => {
       const input = 'this is some matching input GET /example'
 
       it('returns the parsed url', () => {
-        expect(urlParser(input)).toEqual('/example')
+        expect(parseUrl(input)).toEqual('/example')
       })
     })
 
@@ -14,7 +14,7 @@ describe('#urlHandler', () => {
       const input = 'this is some matching input GET https://www.example.com/example'
 
       it('returns the parsed url without the domain', () => {
-        expect(urlParser(input)).toEqual('/example')
+        expect(parseUrl(input)).toEqual('/example')
       })
     })
   })
@@ -23,7 +23,7 @@ describe('#urlHandler', () => {
     const input = 'this is some non matching input'
 
     it('returns the existing parsed data', () => {
-      expect(urlParser(input)).toBeNull()
+      expect(parseUrl(input)).toBeNull()
     })
   })
 })

@@ -5,7 +5,7 @@ function trimmedUrl(url: string): string {
   return url.replace(domainRegex, '')
 }
 
-export const urlParser: Parser = (input) => {
+export const parseUrl: Parser = (input) => {
   const urlRegex = /(?:GET|POST|PUT|DELETE|PATCH|CONNECT|HEAD|OPTIONS|TRACE)\s([/\-\:_&?=%.\w]+)/
   const match = input.match(urlRegex)
 
