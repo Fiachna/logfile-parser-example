@@ -2,10 +2,18 @@ import { urlParser } from "./url-parser"
 
 describe('#urlHandler', () => {
   describe('when the input matches a url pattern', () => {
-    const input = 'this is some matching input GET /example '
+    describe('when the input does not include a domain', () => {
+      const input = 'this is some matching input GET /example'
 
-    describe('when there is no existing parsed-data', () => {
-      it('populates the url section of the parsed data with the found url', () => {
+      it('returns the parsed url', () => {
+        expect(urlParser(input)).toEqual('/example')
+      })
+    })
+
+    describe('when the input includes a domain', () => {
+      const input = 'this is some matching input GET https://www.example.com/example'
+
+      it('returns the parsed url without the domain', () => {
         expect(urlParser(input)).toEqual('/example')
       })
     })
