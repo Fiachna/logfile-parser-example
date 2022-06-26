@@ -6,7 +6,7 @@ describe('#urlHandler', () => {
 
     describe('when there is no existing parsed-data', () => {
       it('populates the url section of the parsed data with the found url', () => {
-
+        expect(urlHandler(input)).toEqual({ ipAddresses: [], urls: [{ value: '/example', count: 1 }] })
       })
     })
 
@@ -15,7 +15,7 @@ describe('#urlHandler', () => {
         const data = { ipAddresses: [], urls: [{ value: '/test', count: 3 }] }
 
         it('adds the found url to the parsed data', () => {
-          expect(urlHandler(input, data)).toEqual({ ipAddresses: [], urls: [{ value: '/example', count: 1 }, ...data.urls] })
+          expect(urlHandler(input, data)).toEqual({ ipAddresses: [], urls: [...data.urls, { value: '/example', count: 1 }] })
         })
       })
 

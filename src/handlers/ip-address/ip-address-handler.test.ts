@@ -15,7 +15,7 @@ describe('#ipAddressHandler', () => {
         const data = { ipAddresses: [{ value: '10.1.1.1', count: 3 }], urls: [] }
 
         it('adds the found IP address to the parsed data', () => {
-          expect(ipAddressHandler(input, data)).toEqual({ ipAddresses: [{ value: '192.168.1.1', count: 1 }, ...data.ipAddresses], urls: [] })
+          expect(ipAddressHandler(input, data)).toEqual({ ipAddresses: [...data.ipAddresses, { value: '192.168.1.1', count: 1 }], urls: [] })
         })
       })
 

@@ -10,7 +10,7 @@ describe('#inputHandler', () => {
 
       it('runs the handlers against the input', () => {
         inputHandler(input, [handler])
-        expect(handler).toHaveBeenCalledWith(input, { ipAddresses: [], domains: [] })
+        expect(handler).toHaveBeenCalledWith(input, { ipAddresses: [], urls: [] })
       })
     })
   })
