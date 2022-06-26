@@ -1,4 +1,4 @@
-import { urlHandler } from "./url-handler"
+import { urlParser } from "./url-parser"
 
 describe('#urlHandler', () => {
   describe('when the input matches a url pattern', () => {
@@ -6,7 +6,7 @@ describe('#urlHandler', () => {
 
     describe('when there is no existing parsed-data', () => {
       it('populates the url section of the parsed data with the found url', () => {
-        expect(urlHandler(input)).toEqual('/example')
+        expect(urlParser(input)).toEqual('/example')
       })
     })
   })
@@ -15,7 +15,7 @@ describe('#urlHandler', () => {
     const input = 'this is some non matching input'
 
     it('returns the existing parsed data', () => {
-      expect(urlHandler(input)).toBeNull()
+      expect(urlParser(input)).toBeNull()
     })
   })
 })

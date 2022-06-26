@@ -1,4 +1,4 @@
-import { ipAddressHandler } from "./ip-address-handler"
+import { ipAddressParser } from "./ip-address-parser"
 
 describe('#ipAddressHandler', () => {
   describe('when the input matches an IP address pattern', () => {
@@ -6,7 +6,7 @@ describe('#ipAddressHandler', () => {
 
     describe('when there is no existing parsed-data', () => {
       it('populates the IP address section of the parsed data with the found IP address', () => {
-        expect(ipAddressHandler(input)).toEqual('192.168.1.1')
+        expect(ipAddressParser(input)).toEqual('192.168.1.1')
       })
     })
   })
@@ -15,7 +15,7 @@ describe('#ipAddressHandler', () => {
     const input = 'this is non matching input'
 
     it('returns the existing parsed data', () => {
-      expect(ipAddressHandler(input)).toBeNull()
+      expect(ipAddressParser(input)).toBeNull()
     })
   })
 })

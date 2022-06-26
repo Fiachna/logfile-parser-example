@@ -1,0 +1,1 @@
+export type Parser = (input: string) => string | null

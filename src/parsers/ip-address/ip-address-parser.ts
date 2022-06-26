@@ -1,6 +1,6 @@
-import { Handler } from "../../types/handler";
+import { Parser } from "../../types/parser";
 
-export const ipAddressHandler: Handler = (input) => {
+export const ipAddressParser: Parser = (input) => {
   const ipRegex = /(?:^|\s)(\d+\.\d+\.\d+\.\d+)(?:$|\s)/
   const match = input.match(ipRegex)
 

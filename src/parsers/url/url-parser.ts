@@ -1,6 +1,6 @@
-import { Handler } from "../../types/handler";
+import { Parser } from "../../types/parser";
 
-export const urlHandler: Handler = (input) => {
+export const urlParser: Parser = (input) => {
   const urlRegex = /(?:GET|POST|PUT|DELETE|PATCH|CONNECT|HEAD|OPTIONS|TRACE)\s([/\-\:_&?=%.\w]+)/
   const match = input.match(urlRegex)
 

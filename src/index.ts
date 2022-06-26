@@ -1,5 +1,5 @@
 import { Command } from 'commander'
-import { fileHandler } from './handlers/file/file-handler';
+import { fileParser } from './parsers/file/file-parser';
 
 const app = new Command();
 
@@ -11,6 +11,6 @@ app
 app
   .argument('filename')
   .description('filename to parse')
-  .action(fileHandler)
+  .action(fileParser)
 
 app.parse()

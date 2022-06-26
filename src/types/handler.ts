@@ -1,1 +1,0 @@
-export type Handler = (input: string) => string | null
